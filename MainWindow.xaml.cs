@@ -55,5 +55,17 @@ namespace senia1._0
             MainWindow1.WindowState = WindowState.Minimized;
         }
 
+        private void NextSevenDays_Click(object sender, RoutedEventArgs e)
+        {
+            NextDays.Visibility = Visibility.Visible;
+            TodayControl.Visibility = Visibility.Hidden;
+        }
+
+        private void Today_Click_1(object sender, RoutedEventArgs e)
+        {
+            TodayControl.Visibility = Visibility.Visible;
+            NextDays.Visibility = Visibility.Hidden;
+        }
+
     }
 }

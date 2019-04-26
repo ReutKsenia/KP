@@ -6,6 +6,90 @@
              xmlns:local="clr-namespace:senia1._0"
              mc:Ignorable="d" 
              Width="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=Width}" Height="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=Height}" d:DesignWidth="798" d:DesignHeight="611.6">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
+            <Grid>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal"/>
+                        <VisualState x:Name="MouseOver">
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ellipse">
+                                    <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                                </ObjectAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path">
+                                    <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="path">
+                                    <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Stroke).(SolidColorBrush.Color)" Storyboard.TargetName="path1">
+                                    <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="path1">
+                                    <EasingColorKeyFrame KeyTime="0" Value="White"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="label">
+                                    <EasingColorKeyFrame KeyTime="0" Value="#FFA584C8"/>
+                                </ColorAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="ellipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.947"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="ellipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="-0.5"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="ellipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0.947"/>
+                                </DoubleAnimationUsingKeyFrames>
+                                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="ellipse">
+                                    <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                                </DoubleAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState x:Name="Pressed"/>
+                        <VisualState x:Name="Disabled"/>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <Label x:Name="label" Content="Добавить задачу" HorizontalAlignment="Stretch" Height="38" Margin="43.801,0.667,0,0" VerticalAlignment="Top" Width="Auto" VerticalContentAlignment="Center" FontFamily="DIN Round Pro" FontSize="14" Background="{x:Null}" Foreground="#FF7141A4"/>
+                <Grid HorizontalAlignment="Left" Margin="0,0.667,0,0" VerticalAlignment="Stretch" Width="43.801">
+                    <Ellipse x:Name="ellipse" Fill="#FF7141A4" HorizontalAlignment="Left" Height="38" Margin="1.334,0.667,0,-0.667" StrokeStartLineCap="Round" StrokeEndLineCap="Round" Stroke="{x:Null}" StrokeThickness="2" VerticalAlignment="Top" Width="37.467" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+                        <Ellipse.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Ellipse.RenderTransform>
+                    </Ellipse>
+                    <Path x:Name="path" Data="M22.4,10 L22.133333,35.067" Fill="#FF7141A4" HorizontalAlignment="Left" Height="23" Margin="18.394,8.698,0,0" Stretch="Fill" Stroke="#FF7141A4" VerticalAlignment="Top" Width="2" StrokeThickness="2" RenderTransformOrigin="0.5,0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="0.252"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                    <Path x:Name="path1" Data="M22.4,10 L22.133333,35.067" Fill="#FF7141A4" HorizontalAlignment="Left" Height="23" Margin="18.725,8.871,0,0" Stretch="Fill" Stroke="#FF7141A4" VerticalAlignment="Top" Width="2" StrokeThickness="2" RenderTransformOrigin="0.5,0.5" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                        <Path.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="89.826"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Path.RenderTransform>
+                    </Path>
+                </Grid>
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="False"/>
+                <Trigger Property="IsDefault" Value="False"/>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="57*"/>
@@ -14,13 +98,24 @@
         </Grid.RowDefinitions>
         <Border  CornerRadius="18,18,18,18" Background="White" Grid.RowSpan="3" Margin="0,0,-0.2,-0.4">
             <Grid Grid.RowSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="398*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="21*"/>
-                    <RowDefinition Height="236*"/>
-                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="46*"/>
+                    <RowDefinition Height="44*"/>
+                    <RowDefinition Height="93*"/>
+                    <RowDefinition Height="385*"/>
+                    <RowDefinition Height="44*"/>
                 </Grid.RowDefinitions>
-                <Label x:Name="l1" Content="Сегодня"  Margin="23,0,0,6.6" FontFamily="DIN Round Pro" FontSize="20" Foreground="#FF7141A4" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="86"/>
-                <Label x:Name="l2" Content="" Margin="109,6,0,0"  Loaded="L2_Loaded" VerticalContentAlignment="Center" Foreground="#FFB092D0" Width="206" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26"/>
+                <Label x:Name="l1" Content="Сегодня"  Margin="2.995,0,0,0" FontFamily="DIN Round Pro" FontSize="20" Foreground="#FF7141A4" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="86" Grid.Column="1"/>
+                <Label x:Name="l2" Content="" Margin="46.9,6,0,0"  Loaded="L2_Loaded" VerticalContentAlignment="Center" Foreground="#FFB092D0" Width="206" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Grid.Column="1"/>
+                <Button x:Name="Add" Content="Button" HorizontalAlignment="Left" Height="38.667" Margin="2.995,0,0,0" Grid.Row="1" VerticalAlignment="Bottom" Width="167.4" Background="{x:Null}" BorderBrush="{x:Null}" Template="{DynamicResource ButtonControlTemplate1}" Grid.Column="1" Click="AddTask_Click"/>
+                <ScrollViewer  Grid.Column="1" Grid.Row="3">
+                    <StackPanel Width="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=Width}" Height="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=Height}" x:Name="panel">
+                    </StackPanel>
+                </ScrollViewer>
             </Grid>
         </Border>
         <DockPanel Grid.Row="2" Margin="0,0.4,-0.2,-0.4">

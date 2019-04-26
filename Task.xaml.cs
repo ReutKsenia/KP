@@ -12,31 +12,27 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Globalization;
 
 namespace senia1._0
 {
     /// <summary>
-    /// Логика взаимодействия для TodayControl.xaml
+    /// Логика взаимодействия для Task.xaml
     /// </summary>
-    public partial class TodayControl : UserControl
+    public partial class Task : UserControl
     {
-        public TodayControl()
+        public Task()
         {
             InitializeComponent();
         }
 
-        private void L2_Loaded(object sender, RoutedEventArgs e)
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
-            DateTime aDate = DateTime.Now;
-            l2.Content = aDate.ToString("ddd, d MMMM yyyy г.", CultureInfo.GetCultureInfo("ru-ru"));
+            textBlock.TextDecorations = TextDecorations.Strikethrough;
         }
 
-        private void AddTask_Click(object sender, RoutedEventArgs e)
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            AddTask add = new AddTask();
-            panel.Children.Add(add);
-          
+            textBlock.TextDecorations = null;
         }
     }
 }

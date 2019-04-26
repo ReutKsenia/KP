@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
-                    xmlns:local="clr-namespace:senia1._0" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+                    xmlns:local="clr-namespace:senia1._0"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
     <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
         <ControlTemplate.Resources>
             <Storyboard x:Key="OnClick1">
